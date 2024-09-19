@@ -1,1 +1,14 @@
-<p>header works!</p>
+<mat-toolbar>
+    <button mat-button [matMenuTriggerFor]="menuRef">
+        <img src="" alt="">
+        <span>Nombre de Usuario</span>
+        <mat-icon>keyboard_arrow_down</mat-icon>
+    </button>
+
+    <mat-menu #menuRef="matMenu">
+        <button mat-menu-item>
+            <mat-icon>logout</mat-icon>
+            <span>Cerrar Sesión</span>
+        </button>
+    </mat-menu>
+</mat-toolbar>
