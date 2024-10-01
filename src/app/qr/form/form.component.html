@@ -1,1 +1,43 @@
-<p>form works!</p>
+<mat-toolbar>
+    <h3>{{ title }}</h3>
+    <button mat-icon-button mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-dialog-content>
+    <form class="container" [formGroup]="group">
+        <mat-form-field appearance="outline">
+            <mat-label>ID Cliente</mat-label>
+            <input type="number" matInput formControlName="id_cliente">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>ID Empleado</mat-label>
+            <input type="number" matInput formControlName="id_empleado">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>ID Seguimiento</mat-label>
+            <input type="number" matInput formControlName="id_seguimiento">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Fecha</mat-label>
+            <input type="date" matInput formControlName="fecha">
+        </mat-form-field>
+        <div fxLayout fxLayoutAlign="end" fxLayoutGap="10px">
+            <button
+                mat-raised-button
+                color="primary"
+                type="button"
+                [disabled]="group.invalid"
+                (click)="save()">
+                Grabar
+            </button>
+            <button
+                mat-button
+                color="primary"
+                mat-dialog-close>
+                Cancelar
+            </button>
+        </div>
+    </form>
+  </mat-dialog-content>
+  

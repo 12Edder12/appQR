@@ -1,1 +1,7 @@
-<p>paginator works!</p>
+<mat-paginator
+    [length]="length"
+    [pageSize]="pageSize"
+    showFirstLastButtons="true"
+    [pageIndex]="currentPage"
+    (page)="changePage($event)">
+</mat-paginator>

@@ -1,1 +1,32 @@
-<p>page-list works!</p>
+<qr-title></qr-title>
+<qr-container>
+  <ng-scrollbar class="heightMaxScrollBar">
+    <qr-table [data]="records" [metaDataColumns]="metaDataColumns">
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let row" class="alignBottom">
+          <button
+              mat-icon-button
+              color="primary"
+              (click)="editRecord(row)"
+              matTooltip="EDITAR">
+              <mat-icon>edit</mat-icon>
+          </button>
+          <button
+              mat-icon-button
+              color="accent"
+              (click)="delete(row.id)"
+              matTooltip="ELIMINAR">
+              <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+    </qr-table>
+  </ng-scrollbar>
+  <qr-paginator
+    class="paginator"
+    (onChangePage)="changePage($event)"
+    [length]="totalRecords">
+  </qr-paginator>
+</qr-container>
+<qr-keypad-button [keypadButtons]="keypadButtons" (onClick)="doAction($event)"></qr-keypad-button>

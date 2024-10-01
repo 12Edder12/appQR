@@ -2,18 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ChannelRoutingModule } from './channel-routing.module';
-import { PageListComponent } from './page-list/page-list.component';
 import { FormComponent } from './form/form.component';
+import { PageListComponent } from './page-list/page-list.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
   declarations: [
-    PageListComponent,
-    FormComponent
+    FormComponent,
+    PageListComponent
   ],
-  imports: [
+  imports: [ 
     CommonModule,
-    ChannelRoutingModule
+    ChannelRoutingModule,
+    SharedModule
   ]
 })
 export class ChannelModule { }

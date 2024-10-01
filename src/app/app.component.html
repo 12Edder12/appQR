@@ -1,18 +1,16 @@
-<mat-sidenav-container autosize="true">
-  <mat-sidenav opened="true" mode="side">
-    <div>
-      <img src="" alt="">
-      <h2>Sistemas de Quejas y Reclamos </h2>
+<mat-drawer-container autosize="true" class="drawer-container">
+  <mat-drawer mode="side" class="drawer" opened="true">
+    <div class="opciones">
+      <h3 *ngIf="expanded">Opciones del Sistema</h3>
     </div>
-    <qr-menu>
-      
-    </qr-menu>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <qr-header>
-      <router-outlet>
+    <div>
+      <qr-menu (onToggleExpanded)="toggleExpanded($event)"></qr-menu>
+    </div>
 
-      </router-outlet>
-    </qr-header>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  </mat-drawer>
+  <mat-drawer-content>
+    <qr-header></qr-header>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
+

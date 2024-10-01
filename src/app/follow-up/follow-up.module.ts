@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FollowUpRoutingModule } from './follow-up-routing.module';
 import { PageListComponent } from './page-list/page-list.component';
 import { FormComponent } from './form/form.component';
-
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,8 @@ import { FormComponent } from './form/form.component';
   ],
   imports: [
     CommonModule,
-    FollowUpRoutingModule
+    FollowUpRoutingModule,
+    SharedModule
   ]
 })
 export class FollowUpModule { }
